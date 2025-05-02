@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 项目列表菜单项 -->
+    <item
+        android:id="@+id/projectListFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/projects" />
+
+    <!-- 统计菜单项 -->
+    <item
+        android:id="@+id/statisticsFragment"
+        android:icon="@android:drawable/ic_menu_report_image"
+        android:title="@string/statistics" />
+
+</menu>

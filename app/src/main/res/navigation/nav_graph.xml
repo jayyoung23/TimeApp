@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/projectListFragment">
+
+    <!-- 项目列表页面 -->
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.example.timetracker.ui.ProjectListFragment"
+        android:label="@string/projects"
+        tools:layout="@layout/fragment_project_list">
+        <action
+            android:id="@+id/action_projectListFragment_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_addProjectFragment"
+            app:destination="@id/addProjectFragment" />
+    </fragment>
+
+    <!-- 项目详情页面 -->
+    <fragment
+        android:id="@+id/projectDetailFragment"
+        android:name="com.example.timetracker.ui.ProjectDetailFragment"
+        android:label="@string/project_detail"
+        tools:layout="@layout/fragment_project_detail">
+        <argument
+            android:name="projectId"
+            app:argType="long" />
+    </fragment>
+
+    <!-- 添加项目页面 -->
+    <fragment
+        android:id="@+id/addProjectFragment"
+        android:name="com.example.timetracker.ui.AddProjectFragment"
+        android:label="@string/add_project"
+        tools:layout="@layout/fragment_add_project" />
+
+    <!-- 统计页面 -->
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.timetracker.ui.StatisticsFragment"
+        android:label="@string/statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+</navigation>
