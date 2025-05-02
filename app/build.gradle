@@ -1,6 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+// 增加 kapt 内存配置
+kapt {
+    javacOptions {
+        // 增加注解处理器的内存分配
+        option("-Xmx1024m")
+    }
+    // 避免 kapt 任务在编译失败时继续
+    keepJavacAnnotationProcessors = true
+    correctErrorTypes = true
+}
 
 android {
     compileSdkVersion 33
@@ -18,12 +30,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    // 使用 JVM 工具链确保 Java 版本一致性
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    
+    // 添加 JVM 工具链配置
+    kotlin {
+        jvmToolchain(8) // 使用 Java 8 工具链
     }
     buildFeatures {
         viewBinding true

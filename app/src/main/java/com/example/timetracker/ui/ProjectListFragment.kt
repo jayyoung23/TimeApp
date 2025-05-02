@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.timetracker.R
 import com.example.timetracker.data.Project
 import com.example.timetracker.databinding.FragmentProjectListBinding
+import com.example.timetracker.service.TimerService
 import com.example.timetracker.viewmodel.ProjectViewModel
 import java.util.*
 

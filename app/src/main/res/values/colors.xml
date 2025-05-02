@@ -1,0 +1,14 @@
+<resources>
+    <!-- Material Design 标准紫色调色板 -->
+    <color name="purple_500">#9C27B0</color>  <!-- 中等紫色 -->
+    <color name="purple_700">#7B1FA2</color>  <!-- 深紫色 -->
+    
+    <!-- 基础颜色 -->
+    <color name="white">#FFFFFF</color>      <!-- 纯白色 -->
+    <color name="black">#000000</color>      <!-- 纯黑色 -->
+    
+    <!-- Material Design 标准青色调色板 -->
+    <color name="teal_200">#80DEEA</color>   <!-- 浅青色 -->
+    <color name="teal_700">#00838F</color>   <!-- 深青色 -->
+    <color name="colorPrimary">#6200EE</color> <!-- 主色调 -->
+</resources>

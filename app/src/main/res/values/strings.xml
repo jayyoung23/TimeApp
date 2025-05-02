@@ -48,4 +48,26 @@
     <string name="select_time_range">选择时间范围</string>
     <string name="duration_distribution">时长分布</string>
     <string name="trend_analysis">趋势分析</string>
+    
+    <!-- 添加缺失的字符串资源 -->
+    <string name="hours">小时</string>
+    <string name="minutes">分钟</string>
+    <string name="reminder">提醒</string>
+    <string name="back">返回</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="today_duration">今日时长</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="average_daily_duration">日均时长</string>
+    <string name="weekly_trend">每周趋势</string>
+    <string name="add_project_hint">添加项目提示</string>
+    <string name="timer_notification_channel_name">计时通知</string>
+    <string name="timer_notification_channel_description">显示当前计时状态</string>
+    <string name="tracking_time">正在计时</string>
+    <string name="error_zero_time">时间不能为零</string>
+    <string name="project_created">项目创建成功</string>
+    <string name="daily_goal_format">每日目标：%s</string>
+    <string name="duration_hours">小时</string>
+    <!-- 以上为新增的字符串资源 -->
 </resources>

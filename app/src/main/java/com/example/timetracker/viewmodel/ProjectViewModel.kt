@@ -25,22 +25,22 @@ class ProjectViewModel(private val projectRepository: ProjectRepository,
     val selectedProjectId: LiveData<Long> = _selectedProjectId
     
     // 选中的项目
-    val selectedProject: LiveData<Project> = Transformations.switchMap(selectedProjectId) { id ->
+    val selectedProject: LiveData<Project> = selectedProjectId.switchMap { id ->
         projectRepository.getProjectById(id)
     }
     
     // 选中项目的今日时长
-    val todayDuration: LiveData<Int> = Transformations.switchMap(selectedProjectId) { id ->
+    val todayDuration: LiveData<Int> = selectedProjectId.switchMap { id ->
         timeRecordRepository.getTodayDuration(id)
     }
     
     // 选中项目的总时长
-    val totalDuration: LiveData<Int> = Transformations.switchMap(selectedProjectId) { id ->
+    val totalDuration: LiveData<Int> = selectedProjectId.switchMap { id ->
         timeRecordRepository.getTotalDuration(id)
     }
     
     // 选中项目的打卡天数
-    val checkInDays: LiveData<Int> = Transformations.switchMap(selectedProjectId) { id ->
+    val checkInDays: LiveData<Int> = selectedProjectId.switchMap { id ->
         timeRecordRepository.getCheckInDays(id)
     }
     
@@ -59,17 +59,17 @@ class ProjectViewModel(private val projectRepository: ProjectRepository,
     }
     
     // 每日统计数据
-    val dailyStats = Transformations.switchMap(selectedProjectId) { id ->
+    val dailyStats = selectedProjectId.switchMap { id ->
         timeRecordRepository.getDailyStats(id)
     }
     
     // 每周统计数据
-    val weeklyStats = Transformations.switchMap(selectedProjectId) { id ->
+    val weeklyStats = selectedProjectId.switchMap { id ->
         timeRecordRepository.getWeeklyStats(id)
     }
     
     // 每月统计数据
-    val monthlyStats = Transformations.switchMap(selectedProjectId) { id ->
+    val monthlyStats = selectedProjectId.switchMap { id ->
         timeRecordRepository.getMonthlyStats(id)
     }
     

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.timetracker.R
 import com.example.timetracker.databinding.FragmentProjectDetailBinding
+import com.example.timetracker.service.TimerService
 import com.example.timetracker.viewmodel.ProjectViewModel
 
 /**
@@ -121,7 +122,7 @@ class ProjectDetailFragment : Fragment() {
                 
                 // 更新每日目标时间
                 val goalTimeText = viewModel.formatTime(it.dailyGoalSeconds)
-                binding.textDailyGoal.text = getString(R.string.daily_goal_format, goalTimeText)
+                binding.textDailyGoal.text = "每日目标：$goalTimeText"
                 
                 // 更新开始/停止按钮状态
                 updateStartStopButton(it.isActive)
@@ -169,11 +170,11 @@ class ProjectDetailFragment : Fragment() {
     private fun updateStartStopButton(isActive: Boolean) {
         if (isActive) {
             // 如果项目正在计时，显示停止按钮
-            binding.buttonStartStop.setText(R.string.stop)
+            binding.buttonStartStop.text = "停止"
             binding.buttonStartStop.setBackgroundResource(R.drawable.bg_button_stop)
         } else {
             // 如果项目未计时，显示开始按钮
-            binding.buttonStartStop.setText(R.string.start)
+            binding.buttonStartStop.text = "开始"
             binding.buttonStartStop.setBackgroundResource(R.drawable.bg_button_start)
         }
     }

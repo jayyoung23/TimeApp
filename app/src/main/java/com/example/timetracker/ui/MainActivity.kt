@@ -1,6 +1,11 @@
 package com.example.timetracker.ui
 
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
+import android.os.IBinder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -10,6 +15,7 @@ import com.example.timetracker.data.AppDatabase
 import com.example.timetracker.databinding.ActivityMainBinding
 import com.example.timetracker.repository.ProjectRepository
 import com.example.timetracker.repository.TimeRecordRepository
+import com.example.timetracker.service.TimerService
 import com.example.timetracker.viewmodel.ProjectViewModel
 
 /**

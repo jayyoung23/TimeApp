@@ -48,7 +48,7 @@ class ChartView @JvmOverloads constructor(
         orientation = VERTICAL
         
         // 加载布局
-        binding = ViewChartBinding.inflate(LayoutInflater.from(context), this, true)
+        binding = ViewChartBinding.inflate(LayoutInflater.from(context), this)
         
         // 初始化图表
         setupChart()
@@ -136,7 +136,7 @@ class ChartView @JvmOverloads constructor(
         }
         
         // 创建数据集
-        val dataSet = BarDataSet(entries, context.getString(R.string.duration_hours))
+        val dataSet = BarDataSet(entries, context.getString(R.string.hours))
         dataSet.color = resources.getColor(R.color.colorPrimary, null)
         
         // 创建图表数据

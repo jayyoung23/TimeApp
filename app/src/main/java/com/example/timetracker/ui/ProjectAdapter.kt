@@ -80,7 +80,7 @@ class ProjectAdapter(
         init {
             // 设置项目点击事件
             binding.root.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onProjectClick(getItem(position))
                 }
@@ -88,7 +88,7 @@ class ProjectAdapter(
             
             // 设置开始/停止按钮点击事件
             binding.buttonTracking.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onTrackingButtonClick(getItem(position))
                 }
